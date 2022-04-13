@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">Project5CafeApp</string>
+    <string name="app_name">Rutgers Cafe</string>
+    <string name="app_name2">Your Order</string>
+    <string name="app_name3">Ordering Coffee</string>
+    <string name="app_name4">Ordering Donuts</string>
+    <string name="app_name5">Store Orders</string>
 </resources>
