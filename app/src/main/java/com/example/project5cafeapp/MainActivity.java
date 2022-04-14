@@ -8,6 +8,9 @@ import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
 
+    public static StoreOrders allStoreOrders = new StoreOrders();
+    public static Order currentOrder = new Order(1);
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
