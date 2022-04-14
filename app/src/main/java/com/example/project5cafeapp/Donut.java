@@ -14,6 +14,7 @@ public class Donut extends MenuItem {
     private int quantity;
     private String flavor;
     private String donutType;
+    private int image;
     private static final double YEAST_DONUT_PRICE = 1.59;
     private static final double CAKE_DONUT_PRICE = 1.79;
     private static final double DONUT_HOLE_PRICE = 0.39;
@@ -25,10 +26,11 @@ public class Donut extends MenuItem {
      @param flavor String denoting the flavor of the donut.
      @param donutType String denoting the type of donut being ordered.
      */
-    public Donut(int quantity, String flavor, String donutType) {
+    public Donut(int quantity, String flavor, String donutType, int image) {
         this.quantity = quantity;
         this.flavor = flavor;
         this.donutType = donutType;
+        this.image = image;
     }
 
 
@@ -47,6 +49,11 @@ public class Donut extends MenuItem {
      */
     public String getDonutType() {
         return this.donutType;
+    }
+
+
+    public int getImage() {
+        return this.image;
     }
 
 

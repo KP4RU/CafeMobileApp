@@ -53,9 +53,9 @@ public class OrderingCoffeeActivity extends AppCompatActivity implements Adapter
         whippedCream = findViewById(R.id.whippedCream);
         listCoffeeSizes = findViewById(R.id.listCoffeeSizes);
         listQuantity = findViewById(R.id.listQuantity);
-        adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, coffeeSizes);
+        adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, coffeeSizes);
         listCoffeeSizes.setAdapter(adapter);
-        adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, quantity);
+        adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, quantity);
         listQuantity.setAdapter(adapter);
         listCoffeeSizes.setOnItemSelectedListener(this);
         listQuantity.setOnItemSelectedListener(this);
