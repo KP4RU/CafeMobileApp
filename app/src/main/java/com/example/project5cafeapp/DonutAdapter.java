@@ -5,11 +5,15 @@ import android.icu.text.DecimalFormat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
@@ -39,7 +43,6 @@ public class DonutAdapter extends RecyclerView.Adapter<DonutAdapter.DonutHolder>
         DecimalFormat paddingZeroes = new DecimalFormat("#,##0.00");
         holder.subTotal.setText(paddingZeroes.format(donuts.get(position).itemPrice()));
         holder.donutImage.setImageResource(donuts.get(position).getImage());
-        String[] quantity = {"1", "2", "3", "4", "5"};
     }
 
     @Override
@@ -53,6 +56,7 @@ public class DonutAdapter extends RecyclerView.Adapter<DonutAdapter.DonutHolder>
         private TextView subTotal;
         private Spinner listQuantity;
         private ImageView donutImage;
+        private Button addToOrder;
 
         public DonutHolder(@NonNull View itemView) {
             super(itemView);
@@ -61,6 +65,49 @@ public class DonutAdapter extends RecyclerView.Adapter<DonutAdapter.DonutHolder>
             subTotal = itemView.findViewById(R.id.subTotalTwo);
             listQuantity = itemView.findViewById(R.id.listQuantityTwo);
             donutImage = itemView.findViewById(R.id.donutImage);
+            addToOrder = itemView.findViewById(R.id.addToOrder);
+            String[] quantity = {"1", "2", "3", "4", "5"};
+            ArrayAdapter<String> adapter = new ArrayAdapter<>(itemView.getContext(), android.R.layout.simple_spinner_dropdown_item, quantity);
+            listQuantity.setAdapter(adapter);
+            setPriceOnQuantityChanged(itemView);
+            setAddToOrderOnClick(itemView);
+
+        }
+
+        private void setAddToOrderOnClick(@NonNull View itemView) {
+            addToOrder.setOnClickListener(new View.OnClickListener() {
+
+                @Override
+                public void onClick(View view) {
+                    Donut addDonut = new Donut(Integer.parseInt(listQuantity.getSelectedItem().toString()), donutFlavor.getText().toString(), donutType.getText().toString(), 0);
+                    MainActivity.currentOrder.add(addDonut);
+                    listQuantity.setSelection(0);
+                    if (donutType.getText().toString().equals("Yeast Donut")) {
+                        subTotal.setText(addDonut.toString());
+                    } else if (donutType.getText().toString().equals("Cake Donut")) {
+                        subTotal.setText("$1.79");
+                    } else {
+                        subTotal.setText("$0.39");
+                    }
+                }
+            });
+        }
+
+        private void setPriceOnQuantityChanged(@NonNull View itemView) {
+            listQuantity.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+
+                @Override
+                public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                    Donut updateDonut = new Donut(Integer.parseInt(listQuantity.getSelectedItem().toString()), donutFlavor.getText().toString(), donutType.getText().toString(), 0);
+                    DecimalFormat paddingZeroes = new DecimalFormat("#,##0.00");
+                    subTotal.setText("$" + paddingZeroes.format(updateDonut.itemPrice()));
+                }
+
+                @Override
+                public void onNothingSelected(AdapterView<?> adapterView) {
+
+                }
+            });
         }
     }
 }
