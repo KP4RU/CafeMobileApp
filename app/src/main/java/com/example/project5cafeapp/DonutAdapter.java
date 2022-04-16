@@ -83,7 +83,7 @@ public class DonutAdapter extends RecyclerView.Adapter<DonutAdapter.DonutHolder>
                     MainActivity.currentOrder.add(addDonut);
                     listQuantity.setSelection(0);
                     if (donutType.getText().toString().equals("Yeast Donut")) {
-                        subTotal.setText(addDonut.toString());
+                        subTotal.setText("$1.59");
                     } else if (donutType.getText().toString().equals("Cake Donut")) {
                         subTotal.setText("$1.79");
                     } else {
