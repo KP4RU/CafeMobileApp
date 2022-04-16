@@ -11,7 +11,6 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -65,7 +64,7 @@ public class OrderingBasketActivity extends AppCompatActivity implements Adapter
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
         AlertDialog.Builder alert = new AlertDialog.Builder(this);
-        alert.setTitle("Demo the alert dialog.");
+        alert.setTitle("Are you sure you want to delete the following menu item?");
         alert.setMessage(adapterView.getAdapter().getItem(i).toString());
         alert.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
             @Override

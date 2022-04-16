@@ -87,4 +87,19 @@ public class Order implements Customizable {
         }
         return false;
     }
+
+    @Override
+    public String toString() {
+        String orderDescription = "";
+        for (int i = 0; i < totalMenuItems.size(); i++) {
+            if (totalMenuItems.get(i) instanceof Donut) {
+                Donut currentDonut = (Donut) totalMenuItems.get(i);
+                orderDescription = orderDescription + currentDonut.toString() + "\n";
+            } else if (totalMenuItems.get(i) instanceof Coffee) {
+                Coffee currentCoffee = (Coffee) totalMenuItems.get(i);
+                orderDescription = orderDescription + currentCoffee.toString() + "\n";
+            }
+        }
+        return orderDescription;
+    }
 }
