@@ -10,112 +10,113 @@
         android:id="@+id/cream"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="92dp"
-        android:layout_marginTop="228dp"
         android:onClick="updateSubTotal"
         android:text="Cream"
+        app:layout_constraintBottom_toTopOf="@+id/milk"
+        app:layout_constraintEnd_toStartOf="@+id/syrup"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/listCoffeeSizes" />
 
     <CheckBox
         android:id="@+id/syrup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="252dp"
-        android:layout_marginTop="228dp"
         android:onClick="updateSubTotal"
         android:text="Syrup"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toTopOf="@+id/caramel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/cream"
+        app:layout_constraintTop_toBottomOf="@+id/listQuantity" />
 
     <CheckBox
         android:id="@+id/milk"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="92dp"
-        android:layout_marginTop="320dp"
         android:onClick="updateSubTotal"
         android:text="Milk"
+        app:layout_constraintBottom_toTopOf="@+id/whippedCream"
+        app:layout_constraintEnd_toStartOf="@+id/caramel"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/cream" />
 
     <CheckBox
         android:id="@+id/caramel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="244dp"
-        android:layout_marginTop="320dp"
         android:onClick="updateSubTotal"
         android:text="Caramel"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toTopOf="@+id/whippedCream"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/milk"
+        app:layout_constraintTop_toBottomOf="@+id/syrup" />
 
     <CheckBox
         android:id="@+id/whippedCream"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="140dp"
-        android:layout_marginTop="412dp"
         android:onClick="updateSubTotal"
         android:text="Whipped Cream"
+        app:layout_constraintBottom_toTopOf="@+id/subTotal"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/milk" />
 
     <Spinner
         android:id="@+id/listCoffeeSizes"
         android:layout_width="116dp"
         android:layout_height="23dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="168dp"
+        app:layout_constraintBottom_toTopOf="@+id/cream"
+        app:layout_constraintEnd_toStartOf="@+id/listQuantity"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <Spinner
         android:id="@+id/listQuantity"
         android:layout_width="118dp"
         android:layout_height="23dp"
-        android:layout_marginStart="276dp"
-        android:layout_marginTop="168dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toTopOf="@+id/syrup"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/cream"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <TextView
         android:id="@+id/subTotal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="236dp"
-        android:layout_marginTop="496dp"
         android:text="$1.69"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toTopOf="@+id/button5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/whippedCream" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="132dp"
-        android:layout_marginTop="496dp"
         android:text="Sub-Total:"
+        app:layout_constraintBottom_toTopOf="@+id/button5"
+        app:layout_constraintEnd_toStartOf="@+id/subTotal"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/whippedCream" />
 
     <Button
         android:id="@+id/button5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="132dp"
-        android:layout_marginTop="544dp"
         android:onClick="addToOrder"
         android:text="Add to Order"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/subTotal" />
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="138dp"
-        android:layout_height="223dp"
-        android:layout_marginStart="136dp"
+        android:layout_width="385dp"
+        android:layout_height="153dp"
         android:src="@drawable/some_coffee"
+        app:layout_constraintBottom_toTopOf="@+id/listCoffeeSizes"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

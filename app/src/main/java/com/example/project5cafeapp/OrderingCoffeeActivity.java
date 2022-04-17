@@ -10,6 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -73,6 +74,8 @@ public class OrderingCoffeeActivity extends AppCompatActivity implements Adapter
         listCoffeeSizes.setSelection(0);
         listQuantity.setSelection(0);
         subTotal.setText("$1.69");
+        Toast.makeText(view.getContext(), "Coffee(s) added to order", Toast.LENGTH_LONG).show();
+
     }
 
     public void updateSubTotal(View view) {

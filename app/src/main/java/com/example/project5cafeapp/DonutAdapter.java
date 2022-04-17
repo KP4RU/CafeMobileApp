@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -89,6 +90,7 @@ public class DonutAdapter extends RecyclerView.Adapter<DonutAdapter.DonutHolder>
                     } else {
                         subTotal.setText("$0.39");
                     }
+                    Toast.makeText(itemView.getContext(), "Donut(s) added to order", Toast.LENGTH_LONG).show();
                 }
             });
         }

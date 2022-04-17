@@ -24,13 +24,13 @@ public class OrderingDonutsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_ordering_donuts);
         RecyclerView recyclerView = findViewById(R.id.donutRecycler);
         String[] flavors = {"Strawberry", "Vanilla", "Chocolate", "Glazed", "Mint", "Frosted", "Blueberry", "Sugary", "Peach", "Peanut", "Mango", "Cherry", "Crunchy", "Powdered", "Apple"};
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < 5; i++) {
             donuts.add(new Donut(1, flavors[i], "Yeast Donut", R.drawable.yeast_donut));
         }
-        for (int i = 5; i < 9; i++) {
+        for (int i = 5; i < 10; i++) {
             donuts.add(new Donut(1, flavors[i], "Cake Donut", R.drawable.cake_donut));
         }
-        for (int i = 10; i < 14; i++) {
+        for (int i = 10; i < 15; i++) {
             donuts.add(new Donut(1, flavors[i], "Donut Hole", R.drawable.donut_holes));
         }
         DonutAdapter adapter = new DonutAdapter(this, donuts);

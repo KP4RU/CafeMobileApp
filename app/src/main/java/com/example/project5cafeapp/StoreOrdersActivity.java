@@ -11,6 +11,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -34,7 +35,7 @@ public class StoreOrdersActivity extends AppCompatActivity implements AdapterVie
         DecimalFormat paddingZeroes = new DecimalFormat("#,##0.00");
         for (int i = 0; i < MainActivity.allStoreOrders.getTotalOrders().size(); i++) {
             double calculatedSubTotal = MainActivity.allStoreOrders.getTotalOrders().get(i).subTotalCalculation();
-            ordersDescription.add("Order #" + MainActivity.allStoreOrders.getTotalOrders().get(i).getOrderNumber() + "\n\n" + MainActivity.allStoreOrders.getTotalOrders().get(i).toString() + "\n Total: " + paddingZeroes.format((calculatedSubTotal + calculatedSubTotal * SALES_TAX)));
+            ordersDescription.add("Order #" + MainActivity.allStoreOrders.getTotalOrders().get(i).getOrderNumber() + "\n\n" + MainActivity.allStoreOrders.getTotalOrders().get(i).toString() + "\nTotal: " + paddingZeroes.format((calculatedSubTotal + calculatedSubTotal * SALES_TAX)));
         }
         adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, ordersDescription);
         listOrderItems.setAdapter(adapter);
@@ -52,6 +53,8 @@ public class StoreOrdersActivity extends AppCompatActivity implements AdapterVie
                 MainActivity.allStoreOrders.remove(MainActivity.allStoreOrders.getTotalOrders().get(i));
                 ordersDescription.remove(i);
                 adapter.notifyDataSetChanged();
+                Toast.makeText(view.getContext(), "Order has been removed", Toast.LENGTH_LONG).show();
+
             }
         }).setNegativeButton("No", null);
         AlertDialog dialog = alert.create();

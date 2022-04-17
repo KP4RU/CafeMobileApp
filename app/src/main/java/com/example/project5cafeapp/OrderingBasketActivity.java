@@ -11,6 +11,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -59,6 +60,8 @@ public class OrderingBasketActivity extends AppCompatActivity implements Adapter
         subTotal.setText("$0.00");
         salesTax.setText("$0.00");
         orderTotal.setText("$0.00");
+        Toast.makeText(view.getContext(), "Your order has been placed", Toast.LENGTH_LONG).show();
+
     }
 
     @Override
@@ -77,6 +80,8 @@ public class OrderingBasketActivity extends AppCompatActivity implements Adapter
                 subTotal.setText("$" + paddingZeroes.format(calculatedSubTotal));
                 salesTax.setText("$" + paddingZeroes.format(calculatedSubTotal * SALES_TAX));
                 orderTotal.setText("$" + paddingZeroes.format(calculatedSubTotal + calculatedSubTotal * SALES_TAX));
+                Toast.makeText(view.getContext(), "Menu item has been removed", Toast.LENGTH_LONG).show();
+
             }
         }).setNegativeButton("No", null);
         AlertDialog dialog = alert.create();
