@@ -6,8 +6,8 @@ import java.util.ArrayList;
 /**
  This class is used to create Order objects that each contain an arraylist of MenuItem objects and an order number.
  There is a constructor that initializes an Order object, and there are getter methods that return the arraylist of
- MenuItem objects and the order number. You can add a MenuItem object to the arraylist and remove a MenuItem object from
- the arraylist.
+ MenuItem objects and the order number. There is also a toString method. You can add a MenuItem object to the arraylist
+ and remove a MenuItem object from the arraylist.
  @author Karan Patel, Azaan Siddiqi
  */
 public class Order implements Customizable {
@@ -88,6 +88,11 @@ public class Order implements Customizable {
         return false;
     }
 
+
+    /**
+     Returns a string that contains a description of all the menu items in a given order.
+     @return a string that contains a description of all the menu items in the order.
+     */
     @Override
     public String toString() {
         String orderDescription = "";
