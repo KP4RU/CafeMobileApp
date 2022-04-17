@@ -95,6 +95,6 @@ public class OrderingCoffeeActivity extends AppCompatActivity implements Adapter
     }
 
     @Override
-    public void onNothingSelected(AdapterView<?> parent) { } //can leave it empty
+    public void onNothingSelected(AdapterView<?> parent) { }
 
 }

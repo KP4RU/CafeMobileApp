@@ -23,21 +23,18 @@ public class OrderingDonutsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ordering_donuts);
         RecyclerView recyclerView = findViewById(R.id.donutRecycler);
+        String[] flavors = {"Strawberry", "Vanilla", "Chocolate", "Glazed", "Mint", "Frosted", "Blueberry", "Sugary", "Peach", "Peanut", "Mango", "Cherry", "Crunchy", "Powdered", "Apple"};
         for (int i = 0; i < 4; i++) {
-            donuts.add(new Donut(1, "Strawberry", "Yeast Donut", R.drawable.yeast_donut));
+            donuts.add(new Donut(1, flavors[i], "Yeast Donut", R.drawable.yeast_donut));
         }
-        for (int i = 0; i < 4; i++) {
-            donuts.add(new Donut(1, "Strawberry", "Cake Donut", R.drawable.cake_donut));
+        for (int i = 5; i < 9; i++) {
+            donuts.add(new Donut(1, flavors[i], "Cake Donut", R.drawable.cake_donut));
         }
-        for (int i = 0; i < 4; i++) {
-            donuts.add(new Donut(1, "Strawberry", "Donut Hole", R.drawable.donut_holes));
+        for (int i = 10; i < 14; i++) {
+            donuts.add(new Donut(1, flavors[i], "Donut Hole", R.drawable.donut_holes));
         }
         DonutAdapter adapter = new DonutAdapter(this, donuts);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-    }
-
-    private void setUpMenuItems() {
-
     }
 }
