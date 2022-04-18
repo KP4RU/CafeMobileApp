@@ -19,6 +19,8 @@ public class OrderingDonutsActivity extends AppCompatActivity {
 
     private ArrayList<Donut> donuts = new ArrayList<>();
 
+    private RecyclerView recyclerView;
+
     private int[] images = {R.drawable.yeast_donut, R.drawable.yeast_donut, R.drawable.yeast_donut,
             R.drawable.yeast_donut, R.drawable.yeast_donut, R.drawable.cake_donut,
             R.drawable.cake_donut, R.drawable.cake_donut, R.drawable.cake_donut,
@@ -36,7 +38,7 @@ public class OrderingDonutsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ordering_donuts);
-        RecyclerView recyclerView = findViewById(R.id.donutRecycler);
+        recyclerView = findViewById(R.id.donutRecycler);
         String[] flavors = {"Strawberry", "Vanilla", "Chocolate", "Glazed", "Mint", "Frosted", "Blueberry", "Sugary", "Peach", "Peanut", "Mango", "Cherry", "Crunchy", "Powdered", "Apple"};
         for (int i = 0; i < 5; i++) {
             donuts.add(new Donut(1, flavors[i], "Yeast Donut", R.drawable.yeast_donut));

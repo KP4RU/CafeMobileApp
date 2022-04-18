@@ -73,6 +73,10 @@ public class OrderingBasketActivity extends AppCompatActivity implements Adapter
      @param view A View object that represents the "Place Order" button on the "Your Order" GUI.
      */
     public void placeOrder(View view) {
+        if (listOrderItems.getAdapter().isEmpty()) {
+            Toast.makeText(view.getContext(), "ERROR: Cannot place an empty order", Toast.LENGTH_LONG).show();
+            return;
+        }
         MainActivity.allStoreOrders.add(MainActivity.currentOrder);
         MainActivity.currentOrder = new Order(MainActivity.currentOrder.getOrderNumber() + 1);
         listOrderItems.setAdapter(null);
