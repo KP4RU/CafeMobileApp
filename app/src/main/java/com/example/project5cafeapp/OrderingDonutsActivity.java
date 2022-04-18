@@ -8,6 +8,13 @@ import android.os.Bundle;
 
 import java.util.ArrayList;
 
+
+/**
+ This class is the blueprint for the "Ordering Donuts" GUI which allows for the ordering of donuts. It initializes the
+ RecyclerView object and the DonutAdapter object corresponding to it, where each item in the RecyclerView object
+ contains information related to a Donut object.
+ @author Karan Patel, Azaan Siddiqi
+ */
 public class OrderingDonutsActivity extends AppCompatActivity {
 
     private ArrayList<Donut> donuts = new ArrayList<>();
@@ -18,6 +25,13 @@ public class OrderingDonutsActivity extends AppCompatActivity {
             R.drawable.cake_donut, R.drawable.donut_holes, R.drawable.donut_holes,
             R.drawable.donut_holes, R.drawable.donut_holes, R.drawable.donut_holes};
 
+
+    /**
+     After the "Order Donuts" button is pressed in the main menu, this method initializes the RecyclerView object in the
+     "Ordering Donuts" GUI and the DonutAdapter object corresponding to it. The DonutAdapter object contains an
+     ArrayList object of 5 yeast donuts, 5 cake donuts, and 5 donut holes.
+     @param savedInstanceState A Bundle object that is used to store the data of the activity.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
