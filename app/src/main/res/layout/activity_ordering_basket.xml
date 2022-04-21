@@ -14,7 +14,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/checkout_bag" />
+        app:srcCompat="@drawable/checkout_bag"
+        android:contentDescription="@string/todo" />
 
     <ListView
         android:id="@+id/listOrderItems"
@@ -39,7 +40,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:editable="false"
-            android:hint="Sales Tax" />
+            android:hint="@string/sales_tax" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -56,7 +57,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:editable="false"
-            android:hint="Sub-Total" />
+            android:hint="@string/sub_total" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -73,7 +74,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:editable="false"
-            android:hint="Total" />
+            android:hint="@string/total" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
@@ -81,7 +82,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:onClick="placeOrder"
-        android:text="Place Order"
+        android:text="@string/place_order"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.444"

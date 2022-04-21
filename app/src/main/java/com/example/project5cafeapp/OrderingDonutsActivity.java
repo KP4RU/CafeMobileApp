@@ -21,12 +21,6 @@ public class OrderingDonutsActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
 
-    private int[] images = {R.drawable.yeast_donut, R.drawable.yeast_donut, R.drawable.yeast_donut,
-            R.drawable.yeast_donut, R.drawable.yeast_donut, R.drawable.cake_donut,
-            R.drawable.cake_donut, R.drawable.cake_donut, R.drawable.cake_donut,
-            R.drawable.cake_donut, R.drawable.donut_holes, R.drawable.donut_holes,
-            R.drawable.donut_holes, R.drawable.donut_holes, R.drawable.donut_holes};
-
 
     /**
      After the "Order Donuts" button is pressed in the main menu, this method initializes the RecyclerView object in the
