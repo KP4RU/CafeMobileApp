@@ -73,6 +73,7 @@ public class DonutAdapter extends RecyclerView.Adapter<DonutAdapter.DonutHolder>
         DecimalFormat paddingZeroes = new DecimalFormat("#,##0.00");
         holder.subTotal.setText(paddingZeroes.format(donuts.get(position).itemPrice()));
         holder.donutImage.setImageResource(donuts.get(position).getImage());
+        holder.listQuantity.setSelection(0);
     }
 
 
