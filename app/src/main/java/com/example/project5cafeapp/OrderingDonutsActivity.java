@@ -21,6 +21,11 @@ public class OrderingDonutsActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
 
+    private int [] images = {R.drawable.strawberryyeastdonut, R.drawable.vanillayeastdonut, R.drawable.chocolateyeastdonut,
+            R.drawable.glazedyeastdonut, R.drawable.mintyeastdonut, R.drawable.frostedcakedonut, R.drawable.blueberrycakedonut,
+            R.drawable.sugarycakedonut, R.drawable.peachcakedonut, R.drawable.peanutcakedonut, R.drawable.mangodonutholes,
+            R.drawable.cherrydonutholes, R.drawable.crunchydonutholes, R.drawable.powdereddonutholes, R.drawable.appledonutholes};
+
 
     /**
      After the "Order Donuts" button is pressed in the main menu, this method initializes the RecyclerView object in the
@@ -35,13 +40,13 @@ public class OrderingDonutsActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.donutRecycler);
         String[] flavors = {"Strawberry", "Vanilla", "Chocolate", "Glazed", "Mint", "Frosted", "Blueberry", "Sugary", "Peach", "Peanut", "Mango", "Cherry", "Crunchy", "Powdered", "Apple"};
         for (int i = 0; i < 5; i++) {
-            donuts.add(new Donut(1, flavors[i], "Yeast Donut", R.drawable.yeast_donut));
+            donuts.add(new Donut(1, flavors[i], "Yeast Donut", images[i]));
         }
         for (int i = 5; i < 10; i++) {
-            donuts.add(new Donut(1, flavors[i], "Cake Donut", R.drawable.cake_donut));
+            donuts.add(new Donut(1, flavors[i], "Cake Donut", images[i]));
         }
         for (int i = 10; i < 15; i++) {
-            donuts.add(new Donut(1, flavors[i], "Donut Hole", R.drawable.donut_holes));
+            donuts.add(new Donut(1, flavors[i], "Donut Hole", images[i]));
         }
         DonutAdapter adapter = new DonutAdapter(this, donuts);
         recyclerView.setAdapter(adapter);

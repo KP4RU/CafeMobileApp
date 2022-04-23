@@ -100,8 +100,8 @@ public class OrderingBasketActivity extends AppCompatActivity implements Adapter
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
         AlertDialog.Builder alert = new AlertDialog.Builder(this);
-        alert.setTitle("Are you sure you want to delete the following menu item?");
-        alert.setMessage(adapterView.getAdapter().getItem(i).toString());
+        alert.setTitle("Remove?");
+        alert.setMessage("Are you sure you want to remove the selected menu item?");
         alert.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
 
 

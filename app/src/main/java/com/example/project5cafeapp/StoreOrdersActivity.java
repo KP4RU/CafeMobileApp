@@ -67,8 +67,8 @@ public class StoreOrdersActivity extends AppCompatActivity implements AdapterVie
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
         AlertDialog.Builder alert = new AlertDialog.Builder(this);
-        alert.setTitle("Are you sure you want to delete the following order?");
-        alert.setMessage(adapterView.getAdapter().getItem(i).toString());
+        alert.setTitle("Remove?");
+        alert.setMessage("Are you sure you want to remove the selected order?");
         alert.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
 
 
