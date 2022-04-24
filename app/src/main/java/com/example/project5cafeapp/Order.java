@@ -28,7 +28,7 @@ public class Order implements Customizable {
 
     /**
      Returns an arraylist containing all the MenuItem objects of a specific Order object.
-     @return an arraylist containing all the MenuItem objects of a specific Order object
+     @return an arraylist containing all the MenuItem objects of a specific Order object.
      */
     public ArrayList<MenuItem> getTotalMenuItems() {
         return this.totalMenuItems;

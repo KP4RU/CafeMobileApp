@@ -111,7 +111,6 @@ public class OrderingCoffeeActivity extends AppCompatActivity implements Adapter
                 Integer.parseInt(listQuantity.getSelectedItem().toString()));
         if (view instanceof CheckBox) {
             CheckBox item = (CheckBox) view;
-            System.out.println(item.getText().toString());
             if (item.isChecked() == true) {
                 currentCoffee.add(item.getText().toString());
             } else if (item.isChecked() == false) {
