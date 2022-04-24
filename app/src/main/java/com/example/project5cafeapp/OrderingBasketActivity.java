@@ -120,7 +120,8 @@ public class OrderingBasketActivity extends AppCompatActivity implements Adapter
                 DecimalFormat paddingZeroes = new DecimalFormat("#,##0.00");
                 subTotal.setText("$" + paddingZeroes.format(calculatedSubTotal));
                 salesTax.setText("$" + paddingZeroes.format(calculatedSubTotal * SALES_TAX));
-                orderTotal.setText("$" + paddingZeroes.format(calculatedSubTotal + calculatedSubTotal * SALES_TAX));
+                orderTotal.setText("$" + paddingZeroes.format(calculatedSubTotal + calculatedSubTotal
+                        * SALES_TAX));
                 Toast.makeText(view.getContext(), "Menu item has been removed", Toast.LENGTH_LONG).show();
 
             }

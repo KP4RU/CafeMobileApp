@@ -21,10 +21,10 @@ import java.util.ArrayList;
 
 
 /**
- This is an Adapter class used to instantiate an Adapter for the RecyclerView that is specific to a Donut object. It includes
- a constructor for initializing a DonutAdapter object, as well as a getter method that returns the number of items in the
- adapter. There is also an inner class that is used to hold the information pertaining to a specific donut that will be displayed in
- one item slot of the RecyclerView object.
+ This is an Adapter class used to instantiate an Adapter for the RecyclerView that is specific to a Donut object. It
+ includes a constructor for initializing a DonutAdapter object, as well as a getter method that returns the number of
+ items in the adapter. There is also an inner class that is used to hold the information pertaining to a specific donut
+ that will be displayed in one item slot of the RecyclerView object.
  @author Karan Patel, Azaan Siddiqi
  */
 public class DonutAdapter extends RecyclerView.Adapter<DonutAdapter.DonutHolder> {
@@ -115,7 +115,8 @@ public class DonutAdapter extends RecyclerView.Adapter<DonutAdapter.DonutHolder>
             donutImage = itemView.findViewById(R.id.donutImage);
             addToOrder = itemView.findViewById(R.id.addToOrder);
             String[] quantity = {"1", "2", "3", "4", "5"};
-            ArrayAdapter<String> adapter = new ArrayAdapter<>(itemView.getContext(), android.R.layout.simple_spinner_dropdown_item, quantity);
+            ArrayAdapter<String> adapter = new ArrayAdapter<>(itemView.getContext(),
+                    android.R.layout.simple_spinner_dropdown_item, quantity);
             listQuantity.setAdapter(adapter);
             setPriceOnQuantityChanged(itemView);
             setAddToOrderOnClick(itemView);
@@ -138,7 +139,8 @@ public class DonutAdapter extends RecyclerView.Adapter<DonutAdapter.DonutHolder>
                  */
                 @Override
                 public void onClick(View view) {
-                    Donut addDonut = new Donut(Integer.parseInt(listQuantity.getSelectedItem().toString()), donutFlavor.getText().toString(), donutType.getText().toString(), 0);
+                    Donut addDonut = new Donut(Integer.parseInt(listQuantity.getSelectedItem().toString()),
+                            donutFlavor.getText().toString(), donutType.getText().toString(), 0);
                     MainActivity.currentOrder.add(addDonut);
                     listQuantity.setSelection(0);
                     if (donutType.getText().toString().equals("Yeast Donut")) {
@@ -173,7 +175,8 @@ public class DonutAdapter extends RecyclerView.Adapter<DonutAdapter.DonutHolder>
                  */
                 @Override
                 public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                    Donut updateDonut = new Donut(Integer.parseInt(listQuantity.getSelectedItem().toString()), donutFlavor.getText().toString(), donutType.getText().toString(), 0);
+                    Donut updateDonut = new Donut(Integer.parseInt(listQuantity.getSelectedItem().toString()),
+                            donutFlavor.getText().toString(), donutType.getText().toString(), 0);
                     DecimalFormat paddingZeroes = new DecimalFormat("#,##0.00");
                     subTotal.setText("$" + paddingZeroes.format(updateDonut.itemPrice()));
                 }

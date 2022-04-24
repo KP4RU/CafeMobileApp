@@ -21,10 +21,20 @@ public class OrderingDonutsActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
 
-    private int [] images = {R.drawable.strawberryyeastdonut, R.drawable.vanillayeastdonut, R.drawable.chocolateyeastdonut,
-            R.drawable.glazedyeastdonut, R.drawable.mintyeastdonut, R.drawable.frostedcakedonut, R.drawable.blueberrycakedonut,
-            R.drawable.sugarycakedonut, R.drawable.peachcakedonut, R.drawable.peanutcakedonut, R.drawable.mangodonutholes,
-            R.drawable.cherrydonutholes, R.drawable.crunchydonutholes, R.drawable.powdereddonutholes, R.drawable.appledonutholes};
+    private int [] images = {R.drawable.strawberryyeastdonut, R.drawable.vanillayeastdonut,
+            R.drawable.chocolateyeastdonut, R.drawable.glazedyeastdonut, R.drawable.mintyeastdonut,
+            R.drawable.frostedcakedonut, R.drawable.blueberrycakedonut, R.drawable.sugarycakedonut,
+            R.drawable.peachcakedonut, R.drawable.peanutcakedonut, R.drawable.mangodonutholes,
+            R.drawable.cherrydonutholes, R.drawable.crunchydonutholes, R.drawable.powdereddonutholes,
+            R.drawable.appledonutholes};
+
+    private static final int YEAST_DONUT_IMAGES_AND_FLAVORS_START_INDEX = 0;
+    private static final int YEAST_DONUT_IMAGES_AND_FLAVORS_END_INDEX = 5;
+    private static final int CAKE_DONUT_IMAGES_AND_FLAVORS_START_INDEX = 5;
+    private static final int CAKE_DONUT_IMAGES_AND_FLAVORS_END_INDEX = 10;
+    private static final int DONUT_HOLES_IMAGES_AND_FLAVORS_START_INDEX = 10;
+    private static final int DONUT_HOLES_IMAGES_AND_FLAVORS_END_INDEX = 15;
+
 
 
     /**
@@ -38,14 +48,15 @@ public class OrderingDonutsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ordering_donuts);
         recyclerView = findViewById(R.id.donutRecycler);
-        String[] flavors = {"Strawberry", "Vanilla", "Chocolate", "Glazed", "Mint", "Frosted", "Blueberry", "Sugary", "Peach", "Peanut", "Mango", "Cherry", "Crunchy", "Powdered", "Apple"};
-        for (int i = 0; i < 5; i++) {
+        String[] flavors = {"Strawberry", "Vanilla", "Chocolate", "Glazed", "Mint", "Frosted", "Blueberry", "Sugary",
+                "Peach", "Peanut", "Mango", "Cherry", "Crunchy", "Powdered", "Apple"};
+        for (int i = YEAST_DONUT_IMAGES_AND_FLAVORS_START_INDEX; i < YEAST_DONUT_IMAGES_AND_FLAVORS_END_INDEX; i++) {
             donuts.add(new Donut(1, flavors[i], "Yeast Donut", images[i]));
         }
-        for (int i = 5; i < 10; i++) {
+        for (int i = CAKE_DONUT_IMAGES_AND_FLAVORS_START_INDEX; i < CAKE_DONUT_IMAGES_AND_FLAVORS_END_INDEX; i++) {
             donuts.add(new Donut(1, flavors[i], "Cake Donut", images[i]));
         }
-        for (int i = 10; i < 15; i++) {
+        for (int i = DONUT_HOLES_IMAGES_AND_FLAVORS_START_INDEX; i < DONUT_HOLES_IMAGES_AND_FLAVORS_END_INDEX; i++) {
             donuts.add(new Donut(1, flavors[i], "Donut Hole", images[i]));
         }
         DonutAdapter adapter = new DonutAdapter(this, donuts);

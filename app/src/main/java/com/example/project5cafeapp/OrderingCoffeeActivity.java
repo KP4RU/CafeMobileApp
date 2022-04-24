@@ -83,7 +83,8 @@ public class OrderingCoffeeActivity extends AppCompatActivity implements Adapter
      @param view A View object that represents the "Add to Order" button on the "Ordering Coffee" GUI.
      */
     public void addToOrder(View view) {
-        Coffee addCoffee = new Coffee(totalAddIns, listCoffeeSizes.getSelectedItem().toString(), Integer.parseInt(listQuantity.getSelectedItem().toString()));
+        Coffee addCoffee = new Coffee(totalAddIns, listCoffeeSizes.getSelectedItem().toString(),
+                Integer.parseInt(listQuantity.getSelectedItem().toString()));
         MainActivity.currentOrder.add(addCoffee);
         cream.setChecked(false);
         syrup.setChecked(false);
@@ -106,7 +107,8 @@ public class OrderingCoffeeActivity extends AppCompatActivity implements Adapter
      the quantity or size.
      */
     public void updateSubTotal(View view) {
-        Coffee currentCoffee = new Coffee(totalAddIns, listCoffeeSizes.getSelectedItem().toString(), Integer.parseInt(listQuantity.getSelectedItem().toString()));
+        Coffee currentCoffee = new Coffee(totalAddIns, listCoffeeSizes.getSelectedItem().toString(),
+                Integer.parseInt(listQuantity.getSelectedItem().toString()));
         if (view instanceof CheckBox) {
             CheckBox item = (CheckBox) view;
             System.out.println(item.getText().toString());

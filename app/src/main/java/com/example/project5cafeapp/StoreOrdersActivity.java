@@ -47,7 +47,9 @@ public class StoreOrdersActivity extends AppCompatActivity implements AdapterVie
         DecimalFormat paddingZeroes = new DecimalFormat("#,##0.00");
         for (int i = 0; i < MainActivity.allStoreOrders.getTotalOrders().size(); i++) {
             double calculatedSubTotal = MainActivity.allStoreOrders.getTotalOrders().get(i).subTotalCalculation();
-            ordersDescription.add("Order #" + MainActivity.allStoreOrders.getTotalOrders().get(i).getOrderNumber() + "\n\n" + MainActivity.allStoreOrders.getTotalOrders().get(i).toString() + "\nTotal: $" + paddingZeroes.format((calculatedSubTotal + calculatedSubTotal * SALES_TAX)));
+            ordersDescription.add("Order #" + MainActivity.allStoreOrders.getTotalOrders().get(i).getOrderNumber() +
+                    "\n\n" + MainActivity.allStoreOrders.getTotalOrders().get(i).toString() + "\nTotal: $" +
+                    paddingZeroes.format((calculatedSubTotal + calculatedSubTotal * SALES_TAX)));
         }
         adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, ordersDescription);
         listOrderItems.setAdapter(adapter);

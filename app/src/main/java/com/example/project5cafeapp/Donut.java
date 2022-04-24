@@ -53,6 +53,10 @@ public class Donut extends MenuItem {
     }
 
 
+    /**
+     Returns the image for a specific donut object.
+     @return the image for a specific donut object.
+     */
     public int getImage() {
         return this.image;
     }
