@@ -79,7 +79,7 @@ public class OrderingBasketActivity extends AppCompatActivity implements Adapter
         }
         MainActivity.allStoreOrders.add(MainActivity.currentOrder);
         MainActivity.currentOrder = new Order(MainActivity.currentOrder.getOrderNumber() + 1);
-        listOrderItems.setAdapter(null);
+        adapter.clear();
         subTotal.setText("$0.00");
         salesTax.setText("$0.00");
         orderTotal.setText("$0.00");
